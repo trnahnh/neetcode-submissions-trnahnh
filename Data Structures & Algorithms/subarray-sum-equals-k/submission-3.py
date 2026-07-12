@@ -1,0 +1,13 @@
+class Solution:
+    def subarraySum(self, nums: List[int], k: int) -> int:
+        count = 0
+
+        for i in range(len(nums)):
+            total = 0
+            for j in range(1, len(nums)):
+                total += nums[j]
+                if total == k:
+                    count += 1
+                j += 1
+
+        return count
